@@ -15,7 +15,38 @@ class ProductoModelo
         $stmt = $this->con->prepare("DELETE FROM productos WHERE id = ?");
         $stmt->bind_param("i", $id);
         return $stmt->execute();
+    }public function obtenerProductosPaginados($inicio, $porPagina)
+{
+    $stmt = $this->con->prepare("SELECT * FROM productos ORDER BY id DESC LIMIT ? OFFSET ?");
+    $stmt->bind_param("ii", $porPagina, $inicio);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $productos = [];
+    while ($row = $result->fetch_assoc()) {
+        $productos[] = $row;
     }
+
+    return $productos;
+}
+
+public function contarProductos()
+{
+    $result = $this->con->query("SELECT COUNT(*) as total FROM productos");
+    $row = $result->fetch_assoc();
+    return $row['total'];
+}
+public function obtenerProductoPorId($id)
+{
+    $stmt = $this->con->prepare("SELECT * FROM productos WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->fetch_assoc();
+}
+
+
+
     public function obtenerProductos()
     {
         $sql = "SELECT * FROM productos";

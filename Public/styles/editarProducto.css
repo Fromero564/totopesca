@@ -1,0 +1,85 @@
+/* editarProducto.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  margin: 20px;
+  color: #333;
+}
+
+.edit-product__title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.edit-product__form {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.edit-product__label {
+  display: block;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.edit-product__input,
+.edit-product__textarea,
+.edit-product__file-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.edit-product__input:focus,
+.edit-product__textarea:focus,
+.edit-product__file-input:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+.edit-product__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.edit-product__current-image-label {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.edit-product__current-image {
+  display: block;
+  margin-top: 8px;
+  max-width: 100px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.edit-product__button {
+  margin-top: 25px;
+  background-color: #2980b9;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-product__button:hover {
+  background-color: #1c5980;
+}
